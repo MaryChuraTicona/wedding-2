@@ -1,0 +1,66 @@
+body, html {
+  margin: 0;
+  padding: 0;
+  
+}
+
+
+/* =============================
+   INVITADO PERSONALIZADO
+============================= */
+/* =============================
+   INVITADO PERSONALIZADO
+============================= */
+.guest-personal {
+  margin: 6rem auto 0; /* auto horizontal = centrado, 6rem desde arriba */
+  padding: 1rem 2rem;
+  max-width: 350px;
+  background: rgba(255, 255, 255, 0.12);
+  border-radius: 20px;
+  backdrop-filter: blur(6px);
+  text-align: center;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+  animation: fadeIn 1.8s ease-out;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+
+/* Efecto hover */
+.guest-personal:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.25);
+}
+
+.guest-personal .guest-name {
+  font-family: "Bodoni Moda", serif;
+  font-size: clamp(1.3rem, 2vw, 1.6rem);
+  font-weight: 700;
+  color: #fff;
+  margin: 0;
+  text-shadow: 0 2px 6px rgba(0, 0, 0, 0.4);
+}
+
+.guest-personal .guest-passes {
+  font-family: "Playfair Display", serif;
+  font-size: clamp(1rem, 1.5vw, 1.2rem);
+  color: rgba(255, 255, 255, 0.9);
+  margin-top: 0.5rem;
+  letter-spacing: 0.5px;
+}
+
+/* Responsive: pantallas pequeñas */
+@media screen and (max-width: 480px) {
+  .guest-personal {
+    padding: 0.8rem 1rem;
+    max-width: 90%;
+    margin-top: 1.5rem;
+  }
+
+  .guest-personal .guest-name {
+    font-size: 1.2rem;
+  }
+
+  .guest-personal .guest-passes {
+    font-size: 0.95rem;
+  }
+}

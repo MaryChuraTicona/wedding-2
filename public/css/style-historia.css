@@ -1,0 +1,144 @@
+.inv-section.history {
+  padding: 1rem 1rem;
+  background: 
+    linear-gradient(to bottom, rgba(0,0,0,1) 0%, rgba(0,0,0,0.5) 20%, rgba(0,0,0,0.5) 100%),
+    url('https://res.cloudinary.com/di1ldo0im/image/upload/v1759880831/pareja8_eco4pm.jpg') no-repeat 45% center/cover;
+  position: relative;
+}
+
+
+.inv-section.history h2 {
+  text-align: center;
+  font-family: 'Playfair Display', serif;
+  font-size: 2.8rem;
+  color: #fff;
+  margin-bottom: 4rem;
+  text-shadow: 3px 3px 12px rgba(0,0,0,0.8);
+}
+
+.timeline {
+  display: flex;
+  flex-direction: column;
+  gap: 4rem;
+  max-width: 900px;
+  margin: 0 auto;
+  position: relative;
+}
+
+/* Línea vertical entre foto y texto */
+.timeline-center {
+  width: 4px;
+  background: #fff;
+  border-radius: 2px;
+  margin: 0 2rem;
+}
+
+/* Evento */
+.timeline-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  opacity: 0;
+  transform: translateY(20px);
+  transition: all 0.7s ease-out;
+}
+
+.timeline-item.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Lado izquierdo y derecho */
+.timeline-left,
+.timeline-right {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  max-width: 45%;
+}
+
+/* Año más grande */
+.timeline-left .timeline-year,
+.timeline-right .timeline-year {
+  font-family: "Rubik Dirt", system-ui;
+  font-size: 2rem;      /* antes 1.6rem */
+  font-weight: bold;
+  color: #fff;
+  margin-bottom: 0.3rem;
+  text-shadow: 3px 3px 12px rgba(0,0,0,0.8);
+}
+
+/* Título del evento (intermedio) */
+.timeline-left h3,
+.timeline-right h3 {
+  font-family: 'Playfair Display', serif;
+  font-size: 1.4rem;    /* antes 1.3rem */
+  color: #fff;
+  margin-bottom: 0.3rem;
+  text-shadow: 2px 2px 10px rgba(0,0,0,0.7);
+  text-align: center;
+}
+
+/* Frase más pequeña pero legible */
+.timeline-left p,
+.timeline-right p {
+  font-family: "Truculenta", sans-serif;
+  font-size: 1.3rem;    /* un poco más pequeño */
+  color: #fff;
+  line-height: 1.5;
+  text-shadow: 1.5px 1.5px 8px rgba(0,0,0,0.7);
+  text-align: center;
+}
+
+
+/* Imagen elegante */
+.timeline-left img,
+.timeline-right img {
+  width: 160px;
+  height: 160px;
+  border-radius: 12px;
+  border: 4px solid rgba(255,255,255,0.9);
+  box-shadow: 0 6px 20px rgba(0,0,0,0.5);
+  margin-bottom: 0.5rem;
+  object-fit: cover;
+  transform: scale(0.8);  /* empieza un poco más pequeño */
+  opacity: 0;             /* invisible al inicio */
+  transition: transform 0.7s ease, opacity 0.7s ease;
+}
+
+
+/* Cuando sea visible (aparece en viewport) */
+.timeline-left img.visible,
+.timeline-right img.visible {
+  transform: scale(1);   /* tamaño normal */
+  opacity: 1;
+}
+
+.timeline-left img:hover,
+.timeline-right img:hover {
+  transform: scale(1.15);          /* zoom suave */
+  box-shadow: 0 10px 30px rgba(0,0,0,0.7);
+}
+/* Línea vertical continua al centro */
+.timeline::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 2px;               /* delgada */
+  height: 100%;
+  background: #fff;          /* color blanco */
+  z-index: 1;
+  border-radius: 1px;
+}
+
+
+
+
+
+/* Mover el último evento un poco hacia arriba */
+.timeline .timeline-item:last-child {
+  margin-bottom: 1rem;  /* reduce el espacio inferior */
+  transform: translateY(-40px); /* sube el evento ligeramente */
+}

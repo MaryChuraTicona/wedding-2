@@ -1,0 +1,100 @@
+/* ================= Base ================= */
+#wedding-schedule.schedule-lavender{
+  --lav-bg:#2c2044;
+  --lav-line:#ffffff;
+  --lav-text:#efeaff;
+  --gold-filter: brightness(0) saturate(100%) invert(88%) sepia(20%)
+                 saturate(566%) hue-rotate(351deg)
+                 brightness(98%) contrast(92%);
+  --shadow:0 14px 30px rgba(0,0,0,.25);
+
+  background:#2c2044;
+  padding:3.2rem 0 3.8rem;
+  font-family:"Playfair Display", serif;
+  color:var(--lav-text);
+}
+#wedding-schedule .section-title{
+  text-align:center;
+  font-size:clamp(1.8rem,4vw,2.4rem);
+  margin:0 auto 2.2rem;
+  color:#fff !important;
+}
+#wedding-schedule .section-title::after{ display:none !important; }
+
+/* ================= Timeline (Grid 3 columnas) ================= */
+#wedding-schedule .timeline{
+  max-width:680px;
+  margin:0 auto;
+  position:relative;
+  padding:0 8px;
+}
+/* Línea vertical única al centro */
+#wedding-schedule .timeline::before{
+  content:"";
+  position:absolute; inset:0;
+  left:50%; transform:translateX(-50%);
+  width:2px; background:var(--lav-line); opacity:.9;
+}
+
+/* Fila: [icono] [columna media (línea + punto)] [texto] */
+#wedding-schedule .timeline-row{
+  display:grid;
+  grid-template-columns: minmax(110px,1fr) 48px minmax(220px,1fr);
+  align-items:center;
+  column-gap:24px;
+  padding:14px 0;            /* compacto */
+  position:relative;
+}
+
+/* Icono dorado, alineado a la derecha (hacia la línea) */
+#wedding-schedule .icon{
+  width:82px; height:auto;
+  filter:var(--gold-filter);
+  justify-self:end;          /* pega al centro */
+  z-index:2;
+}
+
+/* Columna media, ancla para el punto */
+#wedding-schedule .mid{
+  grid-column:2;
+  justify-self:center;
+  position:relative;
+  width:2px; height:100%;
+}
+#wedding-schedule .dot{
+  position:absolute; left:50%; top:50%;
+  translate:-50% -50%;
+  width:14px; height:14px; border-radius:50%;
+  background:#fff; border:2px solid #fff; box-shadow:var(--shadow);
+  z-index:3;
+}
+
+/* Texto alineado a la izquierda, pegado al centro */
+#wedding-schedule .info{
+  grid-column:3;
+  text-align:left;
+}
+#wedding-schedule .info h3{
+  margin:0; font-size:1.35rem; font-weight:800; color:var(--lav-text);
+}
+#wedding-schedule .info p{
+  margin:.22rem 0 0; font-size:1rem; opacity:.92;
+}
+
+/* ================= MÓVIL (igual a PC pero más compacto) ================= */
+@media (max-width:700px){
+  #wedding-schedule .timeline{ max-width:94%; }
+
+  /* mantenemos 3 columnas, pero más estrechas */
+  #wedding-schedule .timeline-row{
+    grid-template-columns: minmax(80px,1fr) 42px minmax(160px,1fr);
+    column-gap:16px;
+    padding:12px 0;
+  }
+  #wedding-schedule .icon{ width:64px; }
+  #wedding-schedule .mid{ width:2px; }
+  #wedding-schedule .dot{ width:12px; height:12px; }
+
+  #wedding-schedule .info h3{ font-size:1.18rem; }
+  #wedding-schedule .info p{ font-size:.96rem; }
+}

@@ -1,0 +1,212 @@
+/* ============================================================
+   GALERÍA LAVANDA — POLAROID ROMÁNTICA (aislado a #gallery)
+============================================================ */
+#gallery.photo-gallery{
+  background:#ffffff;
+  padding:80px 20px 100px;
+  text-align:center;
+  font-family:"Playfair Display", serif;
+}
+
+/* Encabezados */
+#gallery .gallery-subtitle{
+  font-size:1rem;
+  letter-spacing:3px;
+  text-transform:uppercase;
+  color:#8b73c2;
+  opacity:.8;
+  margin-bottom:10px;
+}
+#gallery .gallery-title{
+  font-size:2.6rem;
+  font-weight:700;
+  color:#6d56a8;
+  margin-bottom:40px;
+}
+
+/* Carrusel base */
+#gallery .carousel-container{
+  position:relative;
+  overflow:hidden;
+  width:92%;
+  max-width:950px;
+  margin:auto;
+  border-radius:25px;
+  background:#ffffff;
+  box-shadow:0 18px 40px rgba(109,86,168,.12);
+}
+#gallery .carousel-track{
+  display:flex;
+  transition:transform .7s ease-in-out;
+}
+#gallery .carousel-slide{
+  flex:0 0 100%;
+  padding:28px; /* espacio para sombra del polaroid */
+}
+
+/* === Tarjeta Polaroid === */
+#gallery .polaroid{
+  --ink:#5b4d77;               /* tinta del pie */
+  --lav:#6d56a8;
+  --edge:#e7ddff;              /* borde clarito */
+  position:relative;
+  display:inline-block;
+  width:100%;
+  max-width:780px;
+  background:#fff;
+  border:2px solid var(--edge);
+  border-radius:14px;
+  padding:16px 16px 48px;      /* extra abajo p/ pie */
+  box-shadow:
+    0 22px 48px rgba(109,86,168,.16),
+    0 2px 0 rgba(109,86,168,.08) inset;
+  transform-style:preserve-3d;
+  transform-origin:center;
+  transition:transform .7s cubic-bezier(.2,.8,.2,1),
+             box-shadow .7s ease, filter .7s ease;
+  perspective:1000px;
+}
+
+/* Imagen dentro del polaroid */
+#gallery .polaroid img{
+  width:100%;
+  height:460px;
+  object-fit:cover;
+  border-radius:10px;
+  display:block;
+  box-shadow:0 10px 24px rgba(0,0,0,.08);
+  cursor:zoom-in; /* indica que se amplía */
+}
+
+/* Pie de foto */
+#gallery .polaroid figcaption{
+  position:absolute;
+  left:0; right:0; bottom:10px;
+  padding:0 16px;
+  font-size:1.02rem;
+  color:var(--ink);
+  opacity:.9;
+  letter-spacing:.2px;
+}
+
+/* Washi tape (decorativo) */
+#gallery .polaroid::before{
+  content:"";
+  position:absolute;
+  top:-10px; left:50%;
+  transform:translateX(-50%) rotate(-2deg);
+  width:120px; height:18px;
+  border-radius:6px;
+  background:linear-gradient(90deg, #e8defb, #d6c8ff, #f1e9ff);
+  box-shadow:0 6px 16px rgba(109,86,168,.18);
+  opacity:.85;
+}
+
+/* Rotación alternada sutil como fotos sueltas */
+#gallery .carousel-slide:nth-child(odd) .polaroid{ transform:rotate(-2.2deg); }
+#gallery .carousel-slide:nth-child(even) .polaroid{ transform:rotate(2.2deg); }
+
+/* Hover 3D suave (se “endereza” y flota) */
+#gallery .polaroid:hover{
+  transform: rotate3d(0,1,0,0deg) rotate(0) translateY(-6px);
+  box-shadow:0 26px 56px rgba(109,86,168,.26);
+  filter:saturate(1.05);
+}
+
+/* Reveal */
+#gallery .reveal{
+  opacity:0; transform:translateY(35px);
+  transition:opacity 1s ease, transform 1s ease;
+}
+#gallery .reveal.visible{
+  opacity:1; transform:translateY(0);
+}
+
+/* Botones carrusel */
+#gallery .carousel-btn{
+  position:absolute; top:50%; transform:translateY(-50%);
+  background:#ffffffcc; color:#6d56a8;
+  font-size:32px; border:none; cursor:pointer;
+  padding:12px 18px; border-radius:50%;
+  box-shadow:0 6px 15px rgba(109,86,168,.18);
+  transition:all .35s ease; z-index:10;
+}
+#gallery .carousel-btn:hover{
+  background:#6d56a8; color:#fff; transform:translateY(-50%) scale(1.18);
+}
+#gallery .prev{ left:18px; }
+#gallery .next{ right:18px; }
+
+/* Responsive */
+@media (max-width:700px){
+  #gallery .polaroid img{ height:360px; }
+  #gallery .gallery-title{ font-size:2rem; }
+  #gallery .polaroid{ padding:12px 12px 42px; }
+}
+
+/* ============================================================
+   LIGHTBOX (visor a pantalla completa) — también aislado
+============================================================ */
+#gallery-lightbox{
+  position:fixed;
+  inset:0;
+  background:rgba(10,8,16,.9);
+  display:none;
+  align-items:center;
+  justify-content:center;
+  z-index:9999;
+}
+#gallery-lightbox.open{ display:flex; }
+
+#gallery-lightbox .lb-stage{
+  max-width:min(92vw,1200px);
+  max-height:82vh;
+  display:flex; align-items:center; justify-content:center;
+  margin:0 64px;
+}
+#gallery-lightbox .lb-image{
+  max-width:100%;
+  max-height:82vh;
+  border-radius:14px;
+  box-shadow:0 30px 70px rgba(0,0,0,.45);
+}
+
+/* Navegación */
+#gallery-lightbox .lb-nav{
+  position:absolute; top:50%; transform:translateY(-50%);
+  background:rgba(255,255,255,.12);
+  border:none; color:#fff; font-size:38px;
+  width:56px; height:56px; border-radius:50%;
+  display:grid; place-items:center; cursor:pointer;
+  transition:all .25s ease;
+}
+#gallery-lightbox .lb-nav:hover{ background:rgba(255,255,255,.25); }
+#gallery-lightbox .lb-prev{ left:18px; }
+#gallery-lightbox .lb-next{ right:18px; }
+
+/* Cerrar */
+#gallery-lightbox .lb-close{
+  position:absolute; top:18px; right:18px;
+  background:rgba(255,255,255,.18);
+  border:none; color:#fff;
+  width:44px; height:44px; border-radius:50%;
+  font-size:20px; cursor:pointer; transition:.25s;
+}
+#gallery-lightbox .lb-close:hover{ background:rgba(255,255,255,.3); }
+
+/* Tira de miniaturas */
+#gallery-lightbox .lb-thumbs{
+  position:absolute; left:0; right:0; bottom:12px;
+  display:flex; gap:10px; padding:8px 14px;
+  overflow-x:auto; scrollbar-width:none;
+}
+#gallery-lightbox .lb-thumbs::-webkit-scrollbar{ display:none; }
+
+#gallery-lightbox .lb-thumbs img{
+  height:70px; width:auto; border-radius:8px; cursor:pointer;
+  opacity:.7; transition:.2s; border:2px solid transparent;
+}
+#gallery-lightbox .lb-thumbs img:hover{ opacity:1; }
+#gallery-lightbox .lb-thumbs img.active{
+  opacity:1; border-color:#cdb7ff; box-shadow:0 0 0 3px rgba(205,183,255,.35);
+}
