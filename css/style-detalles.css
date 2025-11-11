@@ -1,0 +1,86 @@
+/* ======================================
+   SECCIÓN FAMILIARES — ESTILO LAVANDA + DORADO
+====================================== */
+
+/* Fondo lavanda elegante */
+.family-wrapper {
+  background: linear-gradient(180deg, #3a2a64 0%, #2c2044 100%);
+  padding: 3rem 0;
+}
+
+/* Tarjeta lavanda oscuro */
+.family-card {
+  width: min(760px, 92vw);
+  margin: 0 auto;
+  background: #2c2044;                   /* ← lavanda profundo */
+  color: #ffffff;                        /* ← tipografía blanca */
+  padding: clamp(2.2rem, 5vw, 3.2rem) clamp(1.4rem, 5vw, 2.2rem);
+  text-align: center;
+  font-family: "Playfair Display", serif;
+
+  /* Marco dorado */
+  border: 2px solid #e4c67c;             /* ← dorado suave */
+  border-radius: 10px;
+  box-shadow: 0 12px 40px rgba(0,0,0,.28);
+
+  position: relative;
+}
+
+/* Líneas laterales doradas delgadas */
+.family-card::before,
+.family-card::after {
+  content: "";
+  position: absolute;
+  top: 14px; bottom: 14px;
+  width: 1.5px;
+  background: #e4c67c;                   /* ← dorado */
+}
+.family-card::before { left: 16px; }
+.family-card::after { right: 16px; }
+
+/* Título principal */
+.family-main-title{
+  font-family:"Great Vibes", cursive;
+  font-size: clamp(2.2rem, 5.5vw, 3.2rem);
+  margin-bottom: 2.4rem;
+  color:#ffffff;                          /* blanco */
+}
+
+/* Subtítulos */
+.family-subtitle{
+  font-family:"Great Vibes", cursive;
+  font-size: clamp(1.8rem, 4.8vw, 2.5rem);
+  margin-bottom: 0.8rem;
+  color:#e4c67c;                           /* dorado */
+}
+
+/* Bloques */
+.family-block{
+  margin: 2rem 0;
+}
+
+/* Nombres */
+.family-block p{
+  font-size: clamp(1.05rem, 3.2vw, 1.25rem);
+  margin: .3rem 0;
+  color:#ffffff;                           /* blanco */
+}
+
+/* Mensaje final */
+.family-footer{
+  margin-top: 2.5rem;
+  font-family:"Great Vibes", cursive;
+  font-size: clamp(1.4rem, 4vw, 1.9rem);
+  color:#ffffff;                           /* blanco */
+}
+
+/* Animación reveal */
+.reveal{
+  opacity:0;
+  transform: translateY(22px);
+  transition: opacity .9s ease, transform .9s ease;
+}
+.reveal.is-visible{
+  opacity:1;
+  transform:none;
+}

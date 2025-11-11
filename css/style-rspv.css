@@ -1,0 +1,102 @@
+/* ================================
+   CONFIRMAR ASISTENCIA — LAVANDA
+================================ */
+.confirm-section{
+  --lav:#6d56a8; --lav-2:#8a74c9; --ink:#2c2138; --frost:#ffffff;
+  position:relative;
+  max-width:760px;
+  margin:70px auto;
+  padding:44px 34px 46px;
+  text-align:center;
+  color:#fff;
+  border-radius:22px;
+  overflow:hidden;
+  background:linear-gradient(180deg, rgba(45,33,60,.88), rgba(45,33,60,.78));
+  box-shadow:0 24px 60px rgba(0,0,0,.25);
+  font-family:"Playfair Display", serif;
+}
+
+/* Fondo con foto y zoom suave */
+.confirm-section::before{
+  content:"";
+  position:absolute; inset:0;
+  background-size:cover; background-position:center;
+  opacity:.0; transform:scale(1);
+  transition:opacity 1.4s ease, transform 8s ease;
+  z-index:0;
+}
+.confirm-section.fondo-activo::before{
+  opacity:.55; transform:scale(1.04);
+  animation:zoomSuave 22s ease-in-out infinite alternate;
+}
+
+/* Capa de vidrio para legibilidad */
+.confirm-section::after{
+  content:"";
+  position:absolute; inset:0;
+  background:radial-gradient(1200px 600px at 50% 10%, rgba(255,255,255,.10), transparent 60%),
+             linear-gradient(180deg, rgba(255,255,255,.06), rgba(255,255,255,0));
+  z-index:0;
+}
+
+.confirm-section *{ position:relative; z-index:1; }
+
+/* Títulos */
+.confirm-title{
+  font-size:clamp(1.4rem, 3.4vw, 1.9rem);
+  letter-spacing:.5px; margin:0 0 6px;
+}
+.confirm-sub{
+  margin:0 auto 18px; opacity:.95; font-family:"Merriweather", serif; font-size:1.02rem;
+}
+
+/* Elección */
+.choice{ display:flex; justify-content:center; gap:12px; margin:14px 0 16px; flex-wrap:wrap; }
+
+.btn-asistira{
+  border:none; cursor:pointer; padding:12px 22px; border-radius:999px;
+  font-weight:700; font-size:.98rem; letter-spacing:.3px;
+  transition:transform .2s ease, box-shadow .2s ease, filter .2s ease;
+}
+.btn-asistira.is-yes{ background:#fef; background:linear-gradient(135deg,#7d67c8,#6d56a8); color:#fff; box-shadow:0 12px 26px rgba(109,86,168,.35);}
+.btn-asistira.is-no { background:rgba(255,255,255,.18); color:#fff; border:1px solid rgba(255,255,255,.35); box-shadow:0 10px 24px rgba(0,0,0,.22);}
+.btn-asistira:hover{ transform:translateY(-2px); filter:brightness(1.03); }
+
+/* Formulario */
+.confirm-form{ margin-top:12px; display:block; }
+.confirm-form[hidden]{ display:none; }
+.confirm-form .row{ margin:10px 0; }
+.confirm-form input{
+  width:100%; padding:14px 16px; border-radius:14px; border:1px solid rgba(255,255,255,.55);
+  background:rgba(255,255,255,.08); color:#fff; font-family:"Merriweather", serif; font-size:1rem;
+}
+.confirm-form input::placeholder{ color:rgba(255,255,255,.75); }
+
+.btn-send{
+  margin-top:10px; border:none; cursor:pointer; border-radius:999px; padding:12px 22px;
+  background:linear-gradient(135deg,#7d67c8,#6d56a8); color:#fff; font-weight:800; letter-spacing:.3px;
+  box-shadow:0 16px 30px rgba(109,86,168,.38); transition:transform .2s ease, filter .2s ease;
+}
+.btn-send:hover{ transform:translateY(-2px); filter:brightness(1.04); }
+
+/* Respuesta corta */
+.response-msg{
+  margin-top:14px; font-family:"Merriweather", serif; font-weight:700; color:#fff;
+}
+
+/* Mensaje grande */
+.zoom-message{ text-align:center; color:#fff; font-family:"Playfair Display", serif; }
+.zoom-message[hidden]{ display:none; }
+.zoom-message h1{
+  font-size:clamp(1.8rem, 5vw, 2.6rem); margin:12px 0 6px; animation:floatUp 6s ease-in-out infinite alternate;
+}
+.zoom-message p{ font-size:1.1rem; line-height:1.55; opacity:.95; }
+
+/* Animaciones */
+@keyframes floatUp{ from{transform:translateY(0)} to{transform:translateY(-10px)} }
+@keyframes zoomSuave{ 0%{transform:scale(1)} 100%{transform:scale(1.04)} }
+
+/* Responsive suaviza padding */
+@media (max-width:560px){
+  .confirm-section{ padding:32px 22px 36px; }
+}

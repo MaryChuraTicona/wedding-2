@@ -1,0 +1,706 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Invitación — Nelson & Mary</title>
+
+  <!-- Fuentes -->
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Poppins:wght@300;500&display=swap" rel="stylesheet">
+
+  <!-- Estilos -->
+  <link rel="stylesheet" href="css/style-base.css">
+  <link rel="stylesheet" href="css/style-invitation.css">
+  <link rel="stylesheet" href="css/style-initial.css">
+  <link rel="stylesheet" href="css/style-detalles.css">
+  <link rel="stylesheet" href="css/style-cronograma.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="stylesheet" href="css/style-ubicacion.css">
+  <link rel="stylesheet" href="css/style-galeria.css">
+  <link rel="stylesheet" href="css/style-rspv.css">
+  <link rel="stylesheet" href="css/style-vestimenta.css">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400..700&display=swap" rel="stylesheet">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400..700&family=Imperial+Script&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/style-countdown.css">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,opsz,wght@0,6..96,400..900;1,6..96,400..900&family=Dancing+Script:wght@400..700&family=Imperial+Script&family=Tangerine:wght@400;700&display=swap" rel="stylesheet">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,opsz,wght@0,6..96,400..900;1,6..96,400..900&family=Dancing+Script:wght@400..700&family=Imperial+Script&family=Tangerine:wght@400;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/style-historia.css">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,opsz,wght@0,6..96,400..900;1,6..96,400..900&family=Dancing+Script:wght@400..700&family=Imperial+Script&family=Tangerine:wght@400;700&family=Truculenta:opsz,wght@12..72,100..900&display=swap" rel="stylesheet">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,opsz,wght@0,6..96,400..900;1,6..96,400..900&family=Dancing+Script:wght@400..700&family=Imperial+Script&family=Rubik+Dirt&family=Tangerine:wght@400;700&family=Truculenta:opsz,wght@12..72,100..900&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Cinzel&family=Uncial+Antiqua&display=swap" rel="stylesheet">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,opsz,wght@0,6..96,400..900;1,6..96,400..900&family=Dancing+Script:wght@400..700&family=Imperial+Script&family=Licorice&family=Rubik+Dirt&family=Tangerine:wght@400;700&family=Truculenta:opsz,wght@12..72,100..900&display=swap" rel="stylesheet">
+
+</head>
+<body>
+
+  <!-- Fondo inicial -->
+  <div class="bg-wrap" aria-hidden="true">
+    <div class="bg-initial">
+      <img src="https://res.cloudinary.com/di1ldo0im/image/upload/v1759880790/fondo_jardin_myle5z.jpg" alt="Fondo jardín" class="bg-img">
+      <div class="bg-gradient"></div>
+    </div>
+  </div>
+
+  <!-- Luciérnagas -->
+  <div class="particles" aria-hidden="true"></div>
+
+  <!-- Escena inicial (Sobre) -->
+  <header class="scene" role="banner">
+    <div class="left-col">
+      <h1 class="brand">Nelson & Mary</h1>
+      <p class="sub">Haz click en el sello para abrir la invitación</p>
+      <div class="guest-personal" id="guestPersonal">
+  <h2 class="guest-name" id="guestName">Invitado especial</h2>
+  <p class="guest-passes" id="guestPasses">Número de pases: 0</p>
+</div>
+
+    </div>
+    <div class="envelope-wrap" aria-label="Sobre de invitación">
+      <div class="envelope" id="envelope">
+        <div class="envelope-body"></div>
+        <div class="envelope-flap" id="flap"></div>
+        <img id="seal" src="https://res.cloudinary.com/di1ldo0im/image/upload/v1759880801/sello_odqskc.png" alt="Sello de cera" class="seal" />
+        
+      
+      </div>
+    </div>
+  </header>
+
+  <!-- Invitación principal -->
+<div id="invitation" class="invitation" aria-hidden="true">
+  <div class="inv-content">
+    <!-- Secciones (pantallas) -->
+    <section class="active">
+      <div class="inv-hero">
+        <div class="hero-bg"></div>
+        <div class="hero-overlay"></div>
+        <div class="hero-fireflies"></div>
+
+        <div class="hero-box">
+          <div class="hero-title">¡Nos casamos!</div>
+
+          <!-- Nombres -->
+          <div class="hero-names">
+            Nelson <br> & <br> Mary
+          </div>
+          
+
+          <!-- Fecha -->
+          <div class="hero-date">
+            <div class="group-date">
+              <!-- Domingo alineado a la izquierda con líneas -->
+              <span class="day_name">
+                <div class="hero-line"></div>
+                <p>DOMINGO</p>
+                <div class="hero-line"></div>
+              </span>
+
+              <!-- Número 23 centrado -->
+             <span class="banner_date">23
+  <span class="date-sub">
+    <span class="banner_month">11.</span>
+    <span class="banner_year">2025</span>
+  </span>
+</span>
+
+
+              <!-- Hora alineada a la derecha con líneas -->
+              <span class="banner_time">
+                <div class="hero-line"></div>
+                <p>2:00 PM</p>
+                <div class="hero-line"></div>
+              </span>
+            </div>
+
+            <!-- Mes y año -->
+           
+
+            <!-- Lugar -->
+            <div class="group-add">
+              <p>"Un cordón de tres dobleces no se rompe fácilmente."</p>
+              <span class="banner_location">Eclesiastés 4:12</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+
+<section class="inv-section countdown" id="countdown">
+
+  <!-- Arco con foto -->
+  <div class="countdown-arc">
+    <img src="https://res.cloudinary.com/di1ldo0im/image/upload/v1759880815/pareja2_goyhgw.jpg" alt="Arco" class="arc-img">
+
+    <!-- Luciérnagas mágicas -->
+    <span class="firefly" style="--x1:30px; --y1:-20px; --x2:60px; --y2:-10px; --x3:40px; --y3:-25px; --scale:1.1;"></span>
+    <span class="firefly" style="--x1:-20px; --y1:15px; --x2:-40px; --y2:5px; --x3:-25px; --y3:20px; --scale:1.2;"></span>
+
+    <!-- Corazones flotantes -->
+    <span class="floating-heart" style="left:20%; top:50%;"></span>
+    <span class="floating-heart" style="left:70%; top:40%;"></span>
+
+    <!-- Estrellas brillantes -->
+    <span class="star" style="--x:10px; --y:-15px; left:10%; top:20%;"></span>
+    <span class="star" style="--x:-20px; --y:10px; left:80%; top:30%;"></span>
+  </div>
+
+
+
+
+<div class="calendar">
+  <h3 class="calendar-title"> SE ACERCA </h3>
+  <div class="month">Noviembre 2025</div>
+  <div class="days">
+    <div class="day-name">D</div>
+    <div class="day-name">L</div>
+    <div class="day-name">M</div>
+    <div class="day-name">M</div>
+    <div class="day-name">J</div>
+    <div class="day-name">V</div>
+    <div class="day-name">S</div>
+
+    <!-- Semana 1 -->
+    <div class="day"></div> <!-- espacio para que inicie sábado -->
+    <div class="day"></div>
+    <div class="day"></div>
+    <div class="day"></div>
+    <div class="day"></div>
+    <div class="day"></div>
+    <div class="day">1</div>
+
+    <!-- Semana 2 -->
+    <div class="day">2</div>
+    <div class="day">3</div>
+    <div class="day">4</div>
+    <div class="day">5</div>
+    <div class="day">6</div>
+    <div class="day">7</div>
+    <div class="day">8</div>
+
+    <!-- Semana 3 -->
+    <div class="day">9</div>
+    <div class="day">10</div>
+    <div class="day">11</div>
+    <div class="day">12</div>
+    <div class="day">13</div>
+    <div class="day">14</div>
+    <div class="day">15</div>
+
+    <!-- Semana 4 -->
+    <div class="day">16</div>
+    <div class="day">17</div>
+    <div class="day">18</div>
+    <div class="day">19</div>
+    <div class="day">20</div>
+    <div class="day">21</div>
+    <div class="day">22</div>
+
+    <!-- Semana 5 -->
+    <div class="day special-day">23</div>
+    <div class="day">24</div>
+    <div class="day">25</div>
+    <div class="day">26</div>
+    <div class="day">27</div>
+    <div class="day">28</div>
+    <div class="day">29</div>
+
+    <!-- Semana 6 -->
+    <div class="day">30</div>
+  </div>
+</div>
+
+
+  <!-- Cronómetro -->
+  <div class="timer-arc">
+    <div id="timer">
+      <div class="time-box">
+        <span class="num" id="days">00</span>
+        <span class="label">Días</span>
+      </div>
+      <div class="time-box">
+        <span class="num" id="hours">00</span>
+        <span class="label">Horas</span>
+      </div>
+      <div class="time-box">
+        <span class="num" id="minutes">00</span>
+        <span class="label">Min</span>
+      </div>
+      <div class="time-box">
+        <span class="num" id="seconds">00</span>
+        <span class="label">Seg</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- Verso romántico -->
+  <div class="countdown-content">
+    <h2>"Cada latido del tiempo nos acerca a la promesa que Dios tejió en nuestros corazones."</h2>
+  </div>
+
+
+
+</section>
+<link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+
+<section class="family-wrapper">
+  <div class="family-card">
+
+    <h2 class="family-main-title reveal" style="--delay:.05s">
+      Con la bendición de Dios<br>y en compañía de nuestros padres
+    </h2>
+
+    <div class="family-block reveal" style="--delay:.15s">
+      <h3 class="family-subtitle">Padres del novio</h3>
+      <p>Bernabe Mamani</p>
+      <p>Patricia Virginia Yujra Vilca</p>
+    </div>
+
+    <div class="family-block reveal" style="--delay:.25s">
+      <h3 class="family-subtitle">Padres de la novia</h3>
+      <p>Edgar Chura Alanoca</p>
+      <p>Lidia Ceferina Ticona Ramírez</p>
+    </div>
+
+    <div class="family-block reveal" style="--delay:.35s">
+      <h3 class="family-subtitle">Guías espirituales</h3>
+      <p>Edwin Saira Sosa</p>
+      <p>Yudy Carina Huaycani Rojas</p>
+    </div>
+
+    <p class="family-footer reveal" style="--delay:.45s">
+      Nos complace invitarte a ser parte de este gran día.
+    </p>
+
+  </div>
+</section>
+
+
+
+
+
+
+
+<section class="inv-section history" id="history">
+  <h2>Nuestra Historia</h2>
+  <div class="timeline">
+
+    <!-- Evento 1: foto izquierda, texto derecha -->
+    <div class="timeline-item">
+      <div class="timeline-left">
+        <img src="https://res.cloudinary.com/di1ldo0im/image/upload/v1759880773/2013_hgpn3f.jpg" alt="Primer Encuentro">
+      </div>
+      <div class="timeline-center"></div>
+      <div class="timeline-right">
+        <div class="timeline-year">2013</div>
+        <h3>Primer Encuentro</h3>
+        <p>Nuestros caminos se cruzaron en la iglesia, como dos estrellas que se descubren en la misma noche.</p>
+      </div>
+    </div>
+
+    <!-- Evento 2: texto izquierda, foto derecha -->
+    <div class="timeline-item">
+      <div class="timeline-left">
+        <div class="timeline-year">2014</div>
+        <h3>Amistad en Caleb</h3>
+        <p>Una amistad floreció, como semillas que buscan la luz del sol.</p>
+      </div>
+      <div class="timeline-center"></div>
+      <div class="timeline-right">
+        <img src="https://res.cloudinary.com/di1ldo0im/image/upload/v1759880785/2014_tnscsp.jpg" alt="Amistad Caleb">
+      </div>
+    </div>
+
+    <!-- Evento 3: foto izquierda, texto derecha -->
+    <div class="timeline-item">
+      <div class="timeline-left">
+        <img src="https://res.cloudinary.com/di1ldo0im/image/upload/v1759880777/2017_g6knou.png" alt="Apoyo Mutuo">
+      </div>
+      <div class="timeline-center"></div>
+      <div class="timeline-right">
+        <div class="timeline-year">2017</div>
+        <h3>Apoyo Mutuo</h3>
+        <p>Nos apoyamos como raíces entrelazadas, compartiendo sueños hasta la noche.</p>
+      </div>
+    </div>
+
+    <!-- Evento 4: texto izquierda, foto derecha -->
+    <div class="timeline-item">
+      <div class="timeline-left">
+        <div class="timeline-year">2019</div>
+        <h3>Fortaleza Juntos</h3>
+        <p>Incluso sin explicaciones, nos sostuvimos como un faro guiando barcos en la tormenta.</p>
+      </div>
+      <div class="timeline-center"></div>
+      <div class="timeline-right">
+        <img src="https://res.cloudinary.com/di1ldo0im/image/upload/v1759880778/2019_xxgdqs.jpg" alt="Fortaleza">
+      </div>
+    </div>
+
+    <!-- Evento 5: foto izquierda, texto derecha -->
+    <div class="timeline-item">
+      <div class="timeline-left">
+        <img src="https://res.cloudinary.com/di1ldo0im/image/upload/v1759880778/2022_kj1pxx.jpg" alt="Comienza Amor">
+      </div>
+      <div class="timeline-center"></div>
+      <div class="timeline-right">
+        <div class="timeline-year">2022</div>
+        <h3>Comienza el Amor</h3>
+        <p>La amistad se transformó en amor, como la primera luz del amanecer iluminando todo a su paso.</p>
+      </div>
+    </div>
+
+    <!-- Evento 6: texto izquierda, foto derecha -->
+    <div class="timeline-item">
+      <div class="timeline-left">
+        <div class="timeline-year">2023</div>
+        <h3>Novios</h3>
+        <p>Nuestros corazones latieron al mismo ritmo, como dos melodías que armonizan para siempre.</p>
+      </div>
+      <div class="timeline-center"></div>
+      <div class="timeline-right">
+        <img src="https://res.cloudinary.com/di1ldo0im/image/upload/v1759880797/2024_eeu5rq.jpg" alt="Novios">
+      </div>
+    </div>
+
+    <!-- Evento 7: foto izquierda, texto derecha -->
+    <div class="timeline-item">
+      <div class="timeline-left">
+        <img src="https://res.cloudinary.com/di1ldo0im/image/upload/v1759880781/2024_nryax5.png" alt="Pedida de Mano">
+      </div>
+      <div class="timeline-center"></div>
+      <div class="timeline-right">
+        <div class="timeline-year">2024</div>
+        <h3>Pedida de Mano</h3>
+        <p>La pedida de mano selló nuestra promesa, como la luna abrazando al sol en un eterno atardecer.</p>
+      </div>
+    </div>
+
+  </div>
+
+
+</section>
+
+
+
+<section id="wedding-schedule" class="schedule-lavender">
+  <h2 class="section-title reveal">Únete a nuestra celebración de amor</h2>
+
+  <div class="timeline">
+    <!-- Item -->
+    <div class="timeline-row reveal">
+      <img src="https://res.cloudinary.com/di1ldo0im/image/upload/v1759880790/iglesia_f9z82z.png" class="icon" alt="Anillos">
+      
+      
+       <span class="mid"><span class="dot"></span></span>
+      <div class="info">
+        <h3>1:30 P.M.</h3>
+        <p>Ceremonia Religiosa</p>
+      </div>
+    </div>
+
+    <!-- Item -->
+    <div class="timeline-row reveal">
+      <img src="https://res.cloudinary.com/di1ldo0im/image/upload/v1759880772/1_dtnn0a.png" class="icon" alt="Cámara">
+     
+    
+       <span class="mid"><span class="dot"></span></span>
+      <div class="info">
+        <h3>4:00 P.M.</h3>
+        <p>Recepción & Bienvenida</p>
+      </div>
+    </div>
+
+    <!-- Item -->
+    <div class="timeline-row reveal">
+      <img src="https://res.cloudinary.com/di1ldo0im/image/upload/v1759880785/copa_shpscl.png" class="icon" alt="Torta">
+      
+     
+      <span class="mid"><span class="dot"></span></span>
+      <div class="info">
+        <h3>5:00 P.M.</h3>
+        <p>Cóctel de Bienvenida</p>
+      </div>
+    </div>
+
+    <!-- Item -->
+    <div class="timeline-row reveal">
+      <img src="https://res.cloudinary.com/di1ldo0im/image/upload/v1759880791/music_yg4uji.png" class="icon" alt="Plato">
+      
+      <span class="mid"><span class="dot"></span></span>
+      <div class="info">
+        <h3>5:15  P.M.</h3>
+        <p>Recital y Sorpresas</p>
+      </div>
+    </div>
+
+     <!-- Item -->
+    <div class="timeline-row reveal">
+      <img src="https://res.cloudinary.com/di1ldo0im/image/upload/v1759880772/4_y4rldp.png" class="icon" alt="Plato">
+      
+      <span class="mid"><span class="dot"></span></span>
+      <div class="info">
+        <h3>7:00  P.M.</h3>
+        <p>Banquete</p>
+      </div>
+    </div>
+
+     <!-- Item -->
+    <div class="timeline-row reveal">
+      <img src="https://res.cloudinary.com/di1ldo0im/image/upload/v1759880772/2_bylovw.png" class="icon" alt="Plato">
+    
+      <span class="mid"><span class="dot"></span></span>
+      <div class="info">
+        <h3>9:30  P.M.</h3>
+        <p>Despedida</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+
+
+
+
+<!-- ==================== GALERÍA ==================== -->
+<section id="gallery" class="photo-gallery">
+
+  <p class="gallery-subtitle reveal">Nuestros momentos dulces</p>
+  <h2 class="gallery-title reveal">Memorias</h2>
+
+  <div class="carousel-container reveal">
+    <div class="carousel-track">
+      <div class="carousel-slide">
+        <figure class="polaroid">
+          <img src="https://res.cloudinary.com/di1ldo0im/image/upload/v1759880813/pareja6_uo4x9o.jpg" alt="2017">
+          <figcaption>Un paseo por la ciudad</figcaption>
+        </figure>
+      </div>
+
+      <div class="carousel-slide">
+        <figure class="polaroid">
+          <img src="https://res.cloudinary.com/di1ldo0im/image/upload/v1759880807/WhatsApp_Image_2025-09-26_at_12.49.21_AM_x7jvtu.jpg" alt="Ciudad">
+          <figcaption>Risas Eternas</figcaption>
+        </figure>
+      </div>
+
+      <div class="carousel-slide">
+        <figure class="polaroid">
+          <img src="https://res.cloudinary.com/di1ldo0im/image/upload/v1762879627/_REN6318_hl6lrx.jpg" alt="Clásico">
+          <figcaption>Una noche tan especial</figcaption>
+        </figure>
+      </div>
+
+      <div class="carousel-slide">
+        <figure class="polaroid">
+          <img src="https://res.cloudinary.com/di1ldo0im/image/upload/v1759880800/pareja9_x0bpd0.jpg" alt="2013">
+          <figcaption>Una mirada encantadora</figcaption>
+        </figure>
+      </div>
+
+      <div class="carousel-slide">
+        <figure class="polaroid">
+          <img src="https://res.cloudinary.com/di1ldo0im/image/upload/v1759880807/WhatsApp_Image_2025-09-26_at_12.50.13_AM_kbu1em.jpg" alt="2014">
+          <figcaption>Sonrisas</figcaption>
+        </figure>
+      </div>
+    </div>
+
+    <button class="carousel-btn prev">❮</button>
+    <button class="carousel-btn next">❯</button>
+  </div>
+  <!-- ... tu sección #gallery ... -->
+
+<!-- ===== Visor Lightbox ===== -->
+<div id="gallery-lightbox" aria-hidden="true">
+  <button class="lb-close" aria-label="Cerrar">✕</button>
+  <button class="lb-nav lb-prev" aria-label="Anterior">❮</button>
+  <div class="lb-stage">
+    <img class="lb-image" alt="">
+  </div>
+  <button class="lb-nav lb-next" aria-label="Siguiente">❯</button>
+
+  <div class="lb-thumbs"></div>
+</div>
+
+
+</section>
+
+
+
+<!-- ==================== CÓDIGO DE VESTIMENTA ==================== -->
+<section id="dress-code" class="dress-code-horizontal">
+  <h2 class="dc-title">CÓDIGO DE VESTIMENTA</h2>
+  <p class="dc-script reveal">formal</p>
+
+  <div class="dc-row">
+    <!-- Ellos -->
+    <div class="dc-side dc-left reveal" style="--delay:0ms">
+      <h3>Ellos</h3>
+      <ul>
+        <li>Traje formal.</li>
+        <li>No beige.</li>
+        <li>Corbata o corbatín.</li>
+        <li>Zapatos de vestir.</li>
+      </ul>
+    </div>
+
+    <!-- Imagen central -->
+    <div class="dc-center reveal" style="--delay:120ms">
+      <img src="https://res.cloudinary.com/di1ldo0im/image/upload/v1762880198/party-img-removebg-preview_ust7gj.png" alt="Vestimenta pareja">
+    </div>
+
+    <!-- Ellas -->
+    <div class="dc-side dc-right reveal" style="--delay:240ms">
+      <h3>Ellas</h3>
+      <ul>
+        <li>Vestido largo.</li>
+        <li>No blanco, beige, crema.</li>
+        <li>Lavanda, rosa palo o plata.</li>
+        <li>Tacones abiertos o cerrados.</li>
+        <li>Accesorios elegantes.</li>
+      </ul>
+
+      <div class="dc-swatches">
+        <span class="sw white"></span>
+        <span class="sw lav"></span>
+        <span class="sw rose"></span>
+        <span class="sw silver"></span>
+      </div>
+    </div>
+  </div>
+
+  <p class="dc-note reveal" style="--delay:360ms">
+    En nuestra boda, los trajes y vestidos largos son el dresscode principal.  
+    ¡Prepárate para brillar!
+  </p>
+</section>
+
+
+
+
+
+
+
+
+
+
+<!-- ==================== UBICACIÓN ==================== -->
+<section class="inv-section location" id="location">
+  <h2 class="section-title">Horizontes: Momentos que nos esperan...</h2>
+
+  <div class="location-blocks">
+
+    <!-- Iglesia -->
+    <div class="location-card">
+      <img src="https://res.cloudinary.com/di1ldo0im/image/upload/v1759880782/ADVENTISTA_pcpg5k.png" alt="Iglesia">
+      <h3>“Maranatha”</h3>
+      <p><strong>Iglesia Adventista del Séptimo Día</strong></p>
+      <p class="address">Comite 16 Manzana 61 Lote27, Ciudad Nueva - Tacna. </p>
+      <button 
+        class="btn-map" 
+        data-map="https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d187.15362006015877!2d-70.23565669470693!3d-17.980757306676555!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e1!3m2!1ses-419!2spe!4v1759472113659!5m2!1ses-419!2spe"
+        data-address="Comite 16 Manzana 61 Lote27, Ciudad Nueva - Tacna.">
+        📍 Ver Ubicación
+      </button>
+    </div>
+
+    <!-- Recepción -->
+    <div class="location-card">
+      <img src="https://res.cloudinary.com/di1ldo0im/image/upload/v1759880785/EXCLUSIVA_oq8hjs.png" alt="Recepción">
+      <h3>"LA EXCLUSIVA" </h3>
+      <p><strong>Salon de Eventos </strong></p>
+      <p class="address">Exclusiva Salón de Eventos, Av. Celestino Vargas 1674-A, Pocollay - Tacna </p>
+      <button 
+        class="btn-map" 
+        data-map="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d314.7404342759006!2d-70.21283313383884!3d-17.98814948020382!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x915ac563d5008d9d%3A0x38fea5b2305b84f1!2sExclusiva%20Sal%C3%B3n%20de%20Eventos!5e1!3m2!1ses-419!2spe!4v1759473064449!5m2!1ses-419!2spe"
+        data-address="Av. Celestino Vargas 1674-A, Pocollay - Tacna">
+        📍 Ver Ubicación
+      </button>
+    </div>
+
+  </div>
+
+  <!-- Modal flotante -->
+  <div id="map-modal">
+    <div class="modal-content">
+      <button id="close-modal">&times;</button>
+      <iframe id="modal-iframe" src="" allowfullscreen loading="lazy"></iframe>
+      <div id="map-address"></div>
+
+      <!-- Botones acción -->
+      <div class="map-actions">
+        <a id="open-in-maps" href="#" target="_blank" class="map-view">🌍 Abrir en Google Maps</a>
+        <a id="directions-btn" href="#" target="_blank" class="map-directions">🚗 Cómo llegar</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- ==================== CONFIRMAR ASISTENCIA ==================== -->
+<section class="confirm-section" id="confirmSection">
+  <h2>Confirmar Asistencia</h2>
+  <p id="mensaje-inicial">Nos encantaría contar con su presencia. Por favor indíquenos si podrá asistir.</p>
+
+  <div id="seleccion-asistencia">
+    <button class="btn-asistira" data-value="si">Sí, asistiré</button>
+    <button class="btn-asistira" data-value="no">No podré asistir</button>
+  </div>
+
+  <!-- Mensaje de confirmación -->
+  <div id="response" class="response-msg"></div>
+
+  <!-- Mensaje especial de GRACIAS -->
+  <div class="zoom-message" id="graciasMessage" style="display:none;">
+    <h1 id="graciasTitulo"></h1>
+    <p id="graciasTexto"></p>
+  </div>
+</section>
+
+
+
+</section>
+
+
+    </div>
+  </div>
+
+  <!-- Música -->
+  <!-- <audio id="bgMusic" src="https://marychuraticona.github.io/boda-musica/ido.mp3" loop></audio> -->
+
+  <audio id="bgMusic" src="https://marychuraticona.github.io/boda-musica/leon3.mp3" loop></audio>
+
+
+
+  <!-- Música -->
+  <!-- <audio id="bgMusic" src="https://s3.ap-southeast-1.amazonaws.com/tynab.wedding/audio/ido.mp3" loop></audio> -->
+  <!-- Scripts -->
+  <script type="module" src="js/animations.js"></script>
+  <script type="module" src="js/countdown.js"></script>
+  <script type="module" src="js/rsvp.js"></script>
+  <script type="module" src="js/historia.js"></script>
+  <script type="module" src="js/ubicacion.js"></script>
+  <script type="module" src="js/familia.js"></script>
+  <script type="module" src="js/galeria.js"></script>
+  <script type="module" src="js/app.js"></script>
+   
+
+
+  
+</body>
+</html>

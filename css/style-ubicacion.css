@@ -1,0 +1,152 @@
+/* =================== UBICACIÓN — Versión final (lavanda sobre blanco) =================== */
+#location{
+  background:#ffffff;                 /* Fondo blanco total */
+  padding:70px 18px 90px;
+}
+
+/* TÍTULO: un solo color (sin degradado ni línea inferior) */
+#location .section-title{
+  font-family:'Cinzel', serif;
+  font-size:clamp(1.9rem,4vw,2.4rem);
+  text-align:center;
+  color:#6d56a8;                      /* Lavanda sólido */
+  margin:0 auto 20px;
+  letter-spacing:1px;
+  font-weight:700;
+  text-shadow:none;
+}
+#location .section-title::after{ content:none; }  /* Quita la rayita */
+
+/* Contenedor de tarjetas */
+#location .location-blocks{
+  display:flex; flex-wrap:wrap; justify-content:center;
+  gap:clamp(18px,3vw,28px);
+  margin-top:28px;
+}
+
+/* Tarjeta */
+#location .location-card{
+  flex:1 1 300px; max-width:360px;
+  background:#fff;
+  padding:22px 18px 20px;
+  border-radius:18px;
+  text-align:center;
+  border:1px solid rgba(109,86,168,.12);
+  box-shadow:0 14px 28px rgba(109,86,168,.10);
+  transition:transform .25s ease, box-shadow .25s ease;
+}
+#location .location-card:hover{
+  transform:translateY(-6px);
+  box-shadow:0 22px 44px rgba(109,86,168,.16);
+}
+
+/* Icono redondo (círculo lavanda más oscuro para resaltar el logo) */
+#location .location-card img{
+  width:120px; height:120px; object-fit:contain;
+  margin:0 auto 12px;
+  padding:24px;
+  background:#8f72db;                 /* Lavanda más notorio */
+  border-radius:50%;
+  border:1px solid rgba(109,86,168,.22);
+  box-shadow:0 10px 22px rgba(109,86,168,.25), 0 6px 14px rgba(0,0,0,.06);
+}
+
+/* Títulos y textos */
+#location .location-card h3{
+  font-family:'Playfair Display', serif;
+  font-size:1.28rem;
+  color:#4a2f8a;
+  margin:6px 0;
+}
+#location .location-card p{ margin:.25rem 0; color:#5a3b73; }
+#location .location-card .address{
+  font-family:'Merriweather', serif;
+  font-size:.96rem; font-weight:600; line-height:1.55; color:#6c4970;
+}
+
+/* Subtítulo (institución) */
+#location .location-card p strong{
+  font-family:'Cinzel', serif;
+  font-size:.85rem;
+  color:#6d56a8;
+  letter-spacing:1px;
+  text-transform:uppercase;
+  display:block;
+  margin-bottom:.35rem;
+}
+
+/* Botón “Ver Ubicación” — lavanda uniforme */
+#location .location-card .btn-map{
+  display:inline-block;
+  margin-top:12px;
+  padding:.72rem 1.2rem;
+  background:#6d56a8;                 /* Lavanda sólido */
+  color:#fff; border:none; border-radius:16px; cursor:pointer;
+  font:600 .92rem 'Merriweather', serif;
+  box-shadow:0 8px 18px rgba(109,86,168,.28);
+  transition:transform .2s ease, filter .2s ease, background .2s ease;
+}
+#location .location-card .btn-map:hover{
+  transform:translateY(-2px);
+  background:#5b4894;                 /* Un toque más oscuro al hover */
+  filter:brightness(1.02);
+}
+
+/* ------------------- MODAL (respetado) ------------------- */
+#map-modal{
+  display:none; position:fixed; inset:0;
+  background:rgba(28,18,42,.55);
+  backdrop-filter:blur(6px);
+  align-items:center; justify-content:center;
+  z-index:9999; opacity:0; transform:scale(.98);
+  transition:opacity .25s ease, transform .25s ease;
+  padding:18px;
+}
+#map-modal.show{ display:flex; opacity:1; transform:scale(1); }
+
+#map-modal .modal-content{
+  position:relative;
+  width:min(720px,96vw); height:min(78vh,560px);
+  background:#fff; border-radius:18px; overflow:hidden;
+  box-shadow:0 24px 60px rgba(0,0,0,.28);
+  display:flex; flex-direction:column;
+}
+#map-modal iframe{ flex:1; width:100%; border:0; min-height:320px; }
+#map-address{
+  padding:10px 12px; text-align:center;
+  font-family:'Merriweather', serif; font-size:.98rem; font-weight:700;
+  color:#4a2f4f; background:#faf6fb;
+}
+#location .map-actions{
+  display:flex; gap:.75rem; justify-content:center;
+  padding:12px; background:#f5f0f9;
+}
+#location .map-actions a{
+  text-decoration:none; border-radius:12px; padding:.6rem 1rem;
+  font:600 .9rem 'Merriweather', serif;
+  box-shadow:0 4px 12px rgba(109,86,168,.16);
+  transition:transform .2s ease, filter .2s ease;
+}
+#location .map-actions a.map-view{
+  background:linear-gradient(135deg,#6d56a8,#8a74c9); color:#fff;
+}
+#location .map-actions a.map-directions{
+  background:#fff; color:#5a3b73; border:1px solid rgba(109,86,168,.25);
+}
+#location .map-actions a:hover{ transform:translateY(-1px); filter:brightness(1.03); }
+
+#close-modal{
+  position:absolute; top:12px; right:12px;
+  background:#6d56a8; color:#fff; border:none;
+  padding:.45rem .9rem; border-radius:12px; cursor:pointer;
+  font:700 .9rem 'Merriweather', serif;
+  box-shadow:0 8px 20px rgba(109,86,168,.25);
+  transition:transform .2s ease, background .2s ease;
+}
+#close-modal:hover{ transform:scale(1.05); background:#5b4894; }
+
+/* Responsive */
+@media (max-width:600px){
+  #location .location-card{ max-width:100%; }
+  #map-modal .modal-content{ width:100%; height:88vh; }
+}
