@@ -1,34 +1,32 @@
+/* =====================================================
+   INVITADO PERSONALIZADO — VERSIÓN OPTIMIZADA
+===================================================== */
+
 body, html {
   margin: 0;
   padding: 0;
-  
 }
 
-
-/* =============================
-   INVITADO PERSONALIZADO
-============================= */
-/* =============================
-   INVITADO PERSONALIZADO
-============================= */
+/* ===== Desktop & tablets ===== */
 .guest-personal {
-  margin: 6rem auto 0; /* auto horizontal = centrado, 6rem desde arriba */
+  margin: 6rem auto 0;
   padding: 1rem 2rem;
   max-width: 350px;
-  background: rgba(255, 255, 255, 0.12);
+
+  /* Elegancia pero eficiente */
+  background: rgba(255, 255, 255, 0.15);
   border-radius: 20px;
-  backdrop-filter: blur(6px);
+  backdrop-filter: blur(6px); /* se apaga en móvil */
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.25);
+
   text-align: center;
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
-  animation: fadeIn 1.8s ease-out;
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  animation: fadeIn 1s ease-out;
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
 }
 
-
-/* Efecto hover */
 .guest-personal:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.25);
+  transform: translateY(-6px);
+  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.35);
 }
 
 .guest-personal .guest-name {
@@ -37,7 +35,7 @@ body, html {
   font-weight: 700;
   color: #fff;
   margin: 0;
-  text-shadow: 0 2px 6px rgba(0, 0, 0, 0.4);
+  text-shadow: 0 2px 6px rgba(0, 0, 0, 0.5);
 }
 
 .guest-personal .guest-passes {
@@ -48,19 +46,37 @@ body, html {
   letter-spacing: 0.5px;
 }
 
-/* Responsive: pantallas pequeñas */
-@media screen and (max-width: 480px) {
+/* =====================================================
+   MODO ULTRA-LITE PARA MÓVIL (sin perder MAGIA)
+===================================================== */
+@media screen and (max-width: 600px) {
+
   .guest-personal {
-    padding: 0.8rem 1rem;
-    max-width: 90%;
-    margin-top: 1.5rem;
+    padding: 0.9rem 1.2rem;
+    margin-top: 1.8rem;
+    max-width: 92%;
+
+    /* ✅ Más liviano: NO blur, NO sombra pesada */
+    backdrop-filter: none !important;
+    background: rgba(255, 255, 255, 0.09);
+    box-shadow: 0 6px 18px rgba(0, 0, 0, 0.22);
+
+    /* ✅ Animación simple */
+    animation: none;
+  }
+
+  .guest-personal:hover {
+    transform: none;
+    box-shadow: 0 6px 18px rgba(0, 0, 0, 0.24);
   }
 
   .guest-personal .guest-name {
     font-size: 1.2rem;
+    text-shadow: 0 1px 3px rgba(0,0,0,0.35);
   }
 
   .guest-personal .guest-passes {
     font-size: 0.95rem;
+    letter-spacing: 0.3px;
   }
 }

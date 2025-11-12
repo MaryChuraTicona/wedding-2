@@ -18,8 +18,8 @@
   position: absolute;
   top: 0; left: 0;
   width: 100%; height: 100%;
-  background: url('https://res.cloudinary.com/di1ldo0im/image/upload/v1762096220/_REN6291_fdzqc2.jpg') center center/cover no-repeat;
-  filter: brightness(0.55) blur(0.5px);
+  background: url('../img/campo.jpg') center center/cover no-repeat;
+  filter: brightness(0.8) blur(0.1px);
   animation: heroZoom 25s ease-in-out infinite alternate;
   z-index: -3;
 }
@@ -44,7 +44,7 @@
 .hero-box {
   position: relative;
   background: rgba(255,255,255,0.12);
-  backdrop-filter: blur(6px);
+  backdrop-filter: blur(1px);
   border-radius: 30px;
   max-width: 600px;
   width: 85%;
@@ -201,5 +201,48 @@
 
   .group-date {
     gap: 0.3rem;
+  }
+}
+
+
+
+/* ============================================================
+   OPTIMIZACIÓN B — SOLO PARA CELULARES DÉBILES
+   (SIN CAMBIAR NADA VISUAL)
+============================================================ */
+@media (max-width: 850px) {
+  @supports ((-webkit-touch-callout: none) or (pointer: coarse)) {
+
+    /* ✅ Optimiza blur sin cambiarlo */
+    .hero-box {
+      will-change: backdrop-filter, opacity, transform;
+    }
+
+    /* ✅ Optimiza animación del fondo (sin apagarla ni cambiar zoom) */
+    .inv-hero .hero-bg {
+      will-change: transform;
+      transform: translateZ(0);
+    }
+
+    /* ✅ Reduce cálculos de sombra (pero visual igual) */
+    .hero-box {
+      box-shadow: 0 15px 50px rgba(0,0,0,0.1);
+    }
+
+    /* ✅ Transiciones suaves, sin quitar nada */
+    .hero-box,
+    .inv-hero .hero-bg {
+      transition: opacity .4s ease, transform .4s ease;
+    }
+
+    /* ✅ Mejora rendimiento si el celular entra en modo ahorro */
+    @media (prefers-reduced-motion: reduce) {
+      .inv-hero .hero-bg {
+        animation-duration: 35s !important; /* más suave, igual visual */
+      }
+      .hero-box {
+        animation-duration: 2.2s !important;
+      }
+    }
   }
 }

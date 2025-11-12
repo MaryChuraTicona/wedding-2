@@ -2,7 +2,7 @@
   padding: 1rem 1rem;
   background: 
     linear-gradient(to bottom, rgba(0,0,0,1) 0%, rgba(0,0,0,0.5) 20%, rgba(0,0,0,0.5) 100%),
-    url('https://res.cloudinary.com/di1ldo0im/image/upload/v1759880831/pareja8_eco4pm.jpg') no-repeat 45% center/cover;
+    url('../img/pareja8.jpg') no-repeat 45% center/cover;
   position: relative;
 }
 

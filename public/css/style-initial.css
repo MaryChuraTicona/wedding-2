@@ -1,5 +1,5 @@
 :root {
-  --bg-dark: transparent; /* Fondo transparente */
+  --bg-dark: transparent;
   --lav1: #cdb4db;
   --lav2: #a06cd5;
   --white-warm: #fffafc;
@@ -22,17 +22,19 @@ html, body {
 }
 body {
   overflow-y: scroll;
-  scrollbar-width: none;  /* Firefox */
+  scrollbar-width: none;
 }
 body::-webkit-scrollbar {
-  display: none;  /* Chrome, Safari */
+  display: none;
 }
 
 
-/* ===================== LUCiÉRNAGAS ELEGANTES ==================== */
+/* ============================================================
+   🔥 LUCES / LUCiÉRNAGAS — PC FULL / MÓVIL LIGHT
+============================================================ */
 .particles {
   position: fixed;
-  top: 0; left: 0;
+  inset: 0;
   width: 100%;
   height: 100%;
   pointer-events: none;
@@ -42,56 +44,47 @@ body::-webkit-scrollbar {
 .p {
   position: absolute;
   border-radius: 50%;
-  background: radial-gradient(circle, rgba(255, 255, 180, 1) 0%, rgba(255, 255, 180, 0) 70%);
+  background: radial-gradient(circle,
+    rgba(255,255,180,1) 0%,
+    rgba(255,255,180,0) 70%);
   opacity: 0.8;
   pointer-events: none;
   animation: glowPulse 2s ease-in-out infinite alternate;
-  width: 12px;   /* un poco más grande */
+  width: 12px;
   height: 12px;
-  filter: blur(1px);
-  box-shadow: 0 0 15px rgba(255, 255, 180, 0.6);
+  filter: blur(0.2px);
+  box-shadow: 0 0 15px rgba(255,255,180,0.3);
 }
 
-/* Pulsación suave */
 @keyframes glowPulse {
-  0% {
-    opacity: 0.7;
-    transform: scale(0.8);
-    filter: blur(1px) drop-shadow(0 0 10px #fffdb5);
-  }
-  50% {
-    opacity: 1;
-    transform: scale(1.1);
-    filter: blur(2px) drop-shadow(0 0 25px #fffdb5);
-  }
-  100% {
-    opacity: 0.7;
-    transform: scale(0.9);
-    filter: blur(1px) drop-shadow(0 0 10px #fffdb5);
-  }
+  0% { opacity: .7; transform: scale(.8); filter: blur(1px) drop-shadow(0 0 10px #fffdb5); }
+  50%{ opacity: 1; transform: scale(1.1); filter: blur(2px) drop-shadow(0 0 25px #fffdb5); }
+  100%{ opacity: .7; transform: scale(.9); filter: blur(1px) drop-shadow(0 0 10px #fffdb5); }
 }
 
-/* Movimiento aleatorio y lento */
 @keyframes floatFirefly {
-  0% { transform: translate(0,0) scale(1); }
-  25% { transform: translate(15px,-20px) scale(1.05); }
-  50% { transform: translate(-10px,-30px) scale(1.1); }
-  75% { transform: translate(20px,-15px) scale(1.05); }
-  100% { transform: translate(0,0) scale(1); }
+  0%{transform:translate(0,0) scale(1)}
+  25%{transform:translate(15px,-20px) scale(1.05)}
+  50%{transform:translate(-10px,-30px) scale(1.1)}
+  75%{transform:translate(20px,-15px) scale(1.05)}
+  100%{transform:translate(0,0) scale(1)}
 }
 
-/* ===================== PORTADA / SOBRE ==================== */
+
+/* ============================================================
+   PORTADA / SOBRE
+============================================================ */
 .scene {
   position: fixed;
-  top: 0; left: 0;
+  inset: 0;
   width: 100%;
   height: 100vh;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  text-align: center;
   gap: 40px;
+  text-align: center;
   color: var(--white-warm);
   overflow: hidden;
   z-index: 20;
@@ -103,9 +96,7 @@ body::-webkit-scrollbar {
   font-size: 2.4rem;
   text-shadow: 0 2px 12px rgba(0,0,0,.3);
 }
-.sub {
-  color: rgba(255,250,252,.85);
-}
+.sub { color: rgba(255,250,252,.85); }
 
 .envelope-wrap {
   display: flex;
@@ -114,15 +105,20 @@ body::-webkit-scrollbar {
   z-index: 5;
 }
 
-.envelope { width: 340px; height: 240px; position: relative; transition: transform 1s ease, opacity 1s ease; }
+.envelope {
+  width: 340px;
+  height: 240px;
+  position: relative;
+  transition: transform 1s ease, opacity 1s ease;
+}
 
 .envelope-body {
   position: absolute; inset: 0;
   border-radius: 12px;
   background: linear-gradient(180deg,#bfa1d9,#9270b5);
-  box-shadow: 0 8px 16px rgba(0,0,0,0.2), inset 0 -4px 10px rgba(0,0,0,0.1);
+  box-shadow: 0 8px 16px rgba(0,0,0,0.2),
+              inset 0 -4px 10px rgba(0,0,0,0.1);
   z-index: 1;
-  transition: opacity 1s ease, transform 1s ease;
 }
 
 .envelope-body::before {
@@ -132,17 +128,20 @@ body::-webkit-scrollbar {
 }
 
 .envelope-flap {
-  position: absolute; top: 0; left: 0;
+  position: absolute;
+  top: 0; left: 0;
   width: 100%; height: 60%;
   background: linear-gradient(180deg,#a085c0,#705191);
-  clip-path: polygon(0 0, 100% 0, 50% 100%);
+  clip-path: polygon(0 0,100% 0,50% 100%);
   border-radius: 6px 6px 0 0;
   z-index: 3;
   box-shadow: 0 4px 12px rgba(0,0,0,0.2);
-  transition: opacity 1s ease, transform 1s ease;
 }
 
-/* ===================== SELLO ==================== */
+
+/* ============================================================
+   SELLO ANIMADO
+============================================================ */
 .seal {
   position: absolute;
   left: 50%; top: 48%;
@@ -150,72 +149,119 @@ body::-webkit-scrollbar {
   width: 80px; height: 80px;
   z-index: 5;
   cursor: pointer;
-  transition: transform 0.5s ease, opacity 0.8s ease;
+  transition: transform .5s ease, opacity .8s ease;
 }
 .seal:hover { transform: translate(-50%,-50%) scale(1.05) rotate(-3deg); }
-.seal--glow { animation: sealMagic 1.2s ease forwards; }
 
 @keyframes sealMagic {
-  0%   { transform: translate(-50%,-50%) scale(1); filter: drop-shadow(0 0 0px var(--gold)); }
-  40%  { transform: translate(-50%,-50%) scale(1.2) rotate(6deg); filter: drop-shadow(0 0 20px var(--gold)); }
-  70%  { transform: translate(-50%,-50%) scale(0.95) rotate(-4deg); filter: drop-shadow(0 0 25px #fff6a5); }
-  100% { transform: translate(-50%,-50%) scale(1); filter: drop-shadow(0 0 0px transparent); }
+  0% { transform: translate(-50%,-50%) scale(1); filter: drop-shadow(0 0 0px var(--gold)); }
+  40%{ transform: translate(-50%,-50%) scale(1.2) rotate(6deg); filter: drop-shadow(0 0 20px var(--gold)); }
+  70%{ transform: translate(-50%,-50%) scale(.95) rotate(-4deg); filter: drop-shadow(0 0 25px #fff6a5); }
+  100%{ transform: translate(-50%,-50%) scale(1); filter: drop-shadow(0 0 0px transparent); }
 }
 
-/* ===================== FONDO BORROSO ==================== */
+
+/* ============================================================
+   FONDO KEN BURNS
+============================================================ */
 .bg-initial { position: fixed; inset: 0; overflow: hidden; z-index: 1; }
+
 .bg-initial .bg-img {
-  width: 100%; height: 100%;
-  object-fit: cover; object-position: center;
-  filter: blur(6px) brightness(0.9);
-  transform: scale(1);
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  filter: blur(.05px) brightness(.9);
   animation: kenBurns 25s ease-in-out infinite alternate;
 }
+
 @keyframes kenBurns {
-  0% { transform: scale(1) translate(0,0); }
-  50% { transform: scale(1.08) translate(0, -2%); }
-  100% { transform: scale(1.1) translate(0, -4%); }
+  0%{transform:scale(1) translate(0,0)}
+  50%{transform:scale(1.08) translate(0,-2%)}
+  100%{transform:scale(1.1) translate(0,-4%)}
 }
 
-/* ===================== FLASH SUAVE ==================== */
+
+/* ============================================================
+   FLASH SUAVE
+============================================================ */
 .flash-elegant {
-  position: fixed; inset: 0;
-  background: radial-gradient(circle, rgba(255,255,255,0.5) 0%, rgba(255,255,255,0) 90%);
-  opacity: 0; pointer-events: none; z-index: 9999;
-  transition: opacity 0.8s ease, transform 0.8s ease;
+  position: fixed;
+  inset: 0;
+  background: radial-gradient(circle,
+    rgba(255,255,255,0.5) 0%,
+    rgba(255,255,255,0) 90%);
+  opacity: 0;
+  pointer-events: none;
+  z-index: 9999;
+  transition: opacity .8s ease, transform .8s ease;
 }
 .flash-elegant.active { opacity: 1; transform: scale(1.05); }
 
-/* ===================== TRANSICIONES SUAVES ==================== */
-.fade-out { opacity: 0; transition: opacity 1.6s ease-in-out; }
-.fade-out-up { opacity: 0; transform: translateY(-40px); transition: opacity 1.6s ease-in-out, transform 1.6s ease-in-out; }
-.fade-out-scale { opacity: 0; transform: scale(0.85); transition: opacity 1.6s ease-in-out, transform 1.6s ease-in-out; }
 
-/* ===================== INVITACIÓN PRINCIPAL ==================== */
+/* ============================================================
+   INVITACIÓN PRINCIPAL
+============================================================ */
 .invitation {
   display: none;
-  position: relative;
   width: 100%;
   min-height: 100vh;
   background: transparent;
   color: var(--white-warm);
-  /*padding: 2rem;*/
   overflow-y: auto;
   scroll-behavior: smooth;
   z-index: 10;
   opacity: 0;
   transition: opacity 1.2s ease;
 }
-.invitation.show {
-  display: block;
-  opacity: 1;
-}
+.invitation.show { display:block; opacity:1; }
+
 .invitation section {
   opacity: 0;
   transform: translateY(30px);
-  transition: opacity 0.8s ease, transform 0.8s ease;
+  transition: opacity .8s ease, transform .8s ease;
 }
 .invitation section.show {
   opacity: 1;
   transform: translateY(0);
+}
+
+
+/* ============================================================
+   📱 MODO ULTRA-LITE PARA CELULAR
+   (Rápido – mantiene estética)
+============================================================ */
+@media (max-width: 768px) {
+
+  /* ❌ Apagar Ken Burns en móvil */
+  .bg-initial .bg-img {
+    animation: none !important;
+    transform: scale(1) !important;
+  }
+
+  /* ❌ Apagar luciérnagas */
+  .particles, .p {
+    display: none !important;
+    animation: none !important;
+  }
+
+  /* ❌ Reducir transiciones */
+  .scene,
+  .invitation section {
+    transition: opacity .5s ease, transform .5s ease;
+  }
+
+  /* ✅ Sobre más ligero */
+  .envelope,
+  .envelope-body,
+  .envelope-flap {
+    transition: transform .4s ease, opacity .4s ease;
+    box-shadow: 0 3px 10px rgba(0,0,0,.16);
+  }
+
+  /* ✅ Sello sin animación compleja */
+  .seal { transition: none !important; }
+  .seal:hover { transform: translate(-50%,-50%) !important; }
+
+  /* ✅ Flash simple */
+  .flash-elegant { transition: opacity .4s ease; }
 }
